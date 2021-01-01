@@ -14,3 +14,95 @@ body {
   max-width: 1980px;
   overflow: auto;
 }
+
+header {
+  background: url("../images/pattern-bg.png") 100% 100%/cover no-repeat;
+  height: 30vh;
+  padding: 1.5rem 5%;
+  text-align: center;
+  width: 100%;
+}
+
+header .main-heading {
+  color: white;
+  font-weight: 500;
+  padding-bottom: 1.5rem;
+}
+
+header .ip-address-form {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+header .ip-address-form label {
+  width: 100%;
+}
+
+header .ip-address-form .ip-address-input {
+  border: none;
+  border-radius: 10px 0 0 10px;
+  color: #2b2b2b;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 12px 16px;
+  width: 100%;
+}
+
+header .ip-address-form .btn-submit {
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  padding: 15px 16px;
+  cursor: pointer;
+}
+
+header .ip-address-form .btn-submit svg,
+header .ip-address-form .btn-submit svg path {
+  pointer-events: none;
+}
+
+header .ip-results-container {
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  padding: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 500px;
+  margin: 0 auto;
+  width: 90%;
+  z-index: 999;
+}
+
+header .ip-results-container .ip-result {
+  padding-bottom: 1.5rem;
+  width: 100%;
+}
+
+header .ip-results-container .ip-result:last-child {
+  padding-bottom: 0;
+}
+
+header .ip-results-container .ip-result .ip-result-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+header .ip-results-container .ip-result .ip-result-data {
+  color: #2b2b2b;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#map-container {
+  height: 70vh;
+}

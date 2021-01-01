@@ -6,6 +6,17 @@ $white: hsl(0, 0%, 100%);
 // ***fonts***
 $font-family: "Rubik", sans-serif;
 
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-flow: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin borderRadius($tLeft, $tRight, $bRight, $bLeft) {
+  border-radius: $tLeft $tRight $bRight $bLeft;
+}
+
 // *****general styles*****
 * {
   box-sizing: border-box;

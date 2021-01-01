@@ -1,0 +1,86 @@
+header {
+  background: url("../images/pattern-bg.png") 100% 100% / cover no-repeat;
+  height: 30vh;
+  padding: 1.5rem 5%;
+  text-align: center;
+  width: 100%;
+
+  .main-heading {
+    color: $white;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+  }
+
+  // form
+  .ip-address-form {
+    @include flex(row nowrap, center, space-between);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+
+    label {
+      width: 100%;
+    }
+
+    .ip-address-input {
+      border: none;
+      @include borderRadius(10px, 0, 0, 10px);
+      color: $veryDarkGray;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 12px 16px;
+      width: 100%;
+    }
+
+    .btn-submit {
+      background-color: $veryDarkGray;
+      border: none;
+      @include borderRadius(0, 10px, 10px, 0);
+      padding: 15px 16px;
+      cursor: pointer;
+
+      svg,
+      svg path {
+        pointer-events: none;
+      }
+    }
+  }
+
+  // results
+  .ip-results-container {
+    background-color: $white;
+    @include borderRadius(10px, 10px, 10px, 10px);
+    padding: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 500px;
+    margin: 0 auto;
+    width: 90%;
+    z-index: 999;
+
+    .ip-result {
+      padding-bottom: 1.5rem;
+      width: 100%;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      .ip-result-title {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding-bottom: 0.3rem;
+        text-transform: uppercase;
+      }
+
+      .ip-result-data {
+        color: $veryDarkGray;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
