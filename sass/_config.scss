@@ -1,0 +1,25 @@
+// ******variables*****
+// ***colors***
+$veryDarkGray: hsl(0, 0%, 17%);
+$darkGray: hsl(0, 0%, 59%);
+$white: hsl(0, 0%, 100%);
+// ***fonts***
+$font-family: "Rubik", sans-serif;
+
+// *****general styles*****
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $white;
+  color: $darkGray;
+  font-family: $font-family;
+  font-size: 18px;
+  min-height: 100vh;
+  min-width: 100vw;
+  max-width: 1980px;
+  overflow: auto;
+}
