@@ -5,6 +5,11 @@ header {
   text-align: center;
   width: 100%;
 
+  @media screen and (min-width: 910px) {
+    height: 25vh;
+    padding: 1.5rem 10%;
+  }
+
   .main-heading {
     color: $white;
     font-weight: 500;
@@ -31,6 +36,10 @@ header {
       font-size: inherit;
       padding: 12px 16px;
       width: 100%;
+
+      @media screen and (min-width: 910px) {
+        cursor: pointer;
+      }
     }
 
     .btn-submit {
@@ -39,6 +48,14 @@ header {
       @include borderRadius(0, 10px, 10px, 0);
       padding: 15px 16px;
       cursor: pointer;
+      transition: all 0.2s;
+
+      @media screen and (min-width: 910px) {
+        &:hover {
+          -webkit-filter: brightness(130%);
+          filter: brightness(130%);
+        }
+      }
 
       svg,
       svg path {
@@ -60,9 +77,40 @@ header {
     width: 90%;
     z-index: 999;
 
+    @media screen and (min-width: 910px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      max-width: 70%;
+      text-align: left;
+    }
+
     .ip-result {
       padding-bottom: 1.5rem;
       width: 100%;
+
+      @media screen and (min-width: 910px) {
+        padding: 0 1rem 0 1.5rem;
+        position: relative;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &::after {
+          content: "";
+          background-color: $darkGray;
+          position: absolute;
+          height: 100%;
+          left: 100%;
+          top: 0;
+          width: 1px;
+        }
+
+        &:last-child::after {
+          display: none;
+        }
+      }
 
       &:last-child {
         padding-bottom: 0;
