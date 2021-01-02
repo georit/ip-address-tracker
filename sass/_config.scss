@@ -17,6 +17,10 @@ $font-family: "Rubik", sans-serif;
   border-radius: $tLeft $tRight $bRight $bLeft;
 }
 
+@mixin boxShadow($offset-x, $offset-y, $blur-radius, $spread-radius, $color) {
+  box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+}
+
 // *****general styles*****
 * {
   box-sizing: border-box;

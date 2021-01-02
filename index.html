@@ -23,18 +23,13 @@
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
-    <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
     <!-- *****CSS***** -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header>
       <h2 class="main-heading">IP Address Tracker</h2>
-      <form action="" class="ip-address-form">
+      <form action="" class="ip-address-form" id="ip-address-form">
         <label for="ip-address-input">
           <input
             type="text"
@@ -44,7 +39,12 @@
             placeholder="Search for any IP address or domain"
           />
         </label>
-        <button class="btn-submit" id="btn-submit">
+        <button
+          class="btn-submit"
+          id="btn-submit"
+          type="submit"
+          form="ip-address-form"
+        >
           <svg
             class="icon-arrow"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,26 +57,31 @@
       </form>
 
       <div class="ip-results-container">
-        <div class="ip-result ip-address" id="ip-address">
+        <div class="ip-result ip-address">
           <p class="ip-result-title">ip address</p>
-          <p class="ip-result-data">192.212.174.101</p>
+          <p class="ip-result-data" id="ip-address"></p>
         </div>
-        <div class="ip-result location" id="location">
+        <div class="ip-result location">
           <p class="ip-result-title">location</p>
-          <p class="ip-result-data">Brooklyn, NY 10001</p>
+          <p class="ip-result-data" id="location"></p>
         </div>
-        <div class="ip-result timezone" id="timezone">
+        <div class="ip-result timezone">
           <p class="ip-result-title">timezone</p>
-          <p class="ip-result-data">UCT-05:00</p>
+          <p class="ip-result-data" id="timezone"></p>
         </div>
-        <div class="ip-result isp" id="isp">
+        <div class="ip-result isp">
           <p class="ip-result-title">isp</p>
-          <p class="ip-result-data">SpaceX Starlink</p>
+          <p class="ip-result-data" id="isp"></p>
         </div>
       </div>
     </header>
     <div class="map-container" id="map-container"></div>
     <!-- *****scripts***** -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
