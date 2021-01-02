@@ -42,7 +42,6 @@ async function getLocation(input) {
     }
 
     const data = await resp.json();
-    console.log(data);
     displayResults(data);
   } catch (error) {
     console.log(error);
@@ -73,6 +72,9 @@ function displayResults(data) {
   // isp
   elementContents(ipIsp, `${data.isp}`);
 
+  //map
+  createMapElement();
+
   // show location on map
   showLocationOnMap(data.location.lat, data.location.lng);
 }
@@ -85,9 +87,23 @@ function elementContents(element, content) {
   }
 }
 
+function createMapElement() {
+  let mapEl = document.createElement("div");
+  mapEl.className = "map-container";
+  mapEl.setAttribute("id", "map-container");
+  document.body.appendChild(mapEl);
+}
+
+function destroyMapElement() {
+  document.getElementById("map-container").remove();
+}
+
 /* *****event listeners***** */
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  getLocation(inputField.value);
+  if (inputField.value !== "") {
+    destroyMapElement();
+    getLocation(inputField.value);
+  }
 });
